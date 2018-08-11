@@ -89,7 +89,7 @@ func NewLen(length int) (id string) {
 }
 
 func GetCode(id string)string{
-	return byte_code:=globalStore.Get(id,false)
+	return globalStore.Get(id,false)
 }
 
 // Reload generates and remembers new digits for the given captcha id.  This
