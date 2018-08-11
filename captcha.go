@@ -59,7 +59,7 @@ const (
 	// by default store.
 	CollectNum = 100
 	// Expiration time of captchas used by default store.
-	Expiration = 10 * time.Minute
+	Expiration = 5 * time.Minute
 )
 
 var (
@@ -86,6 +86,10 @@ func NewLen(length int) (id string) {
 	id = randomId()
 	globalStore.Set(id, RandomDigits(length))
 	return
+}
+
+func GetCode(id string)string{
+	return byte_code:=globalStore.Get(id,false)
 }
 
 // Reload generates and remembers new digits for the given captcha id.  This
